@@ -1,11 +1,58 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--Started December 1st 2021-->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+		<script src="main.js"></script>
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+		<title>Garrett McMichael</title>
 	</head>
 	<body>
-		<h1>Hello World</h1>
-		<p>Hosted with GitHub Pages.</p>
+		<!--Navbar-->
+		<nav class="navbar" id="navBar" onmouseover="ToggleSidebar()" onmouseout="ToggleSidebar()">
+			<a href="index.html" class="active"><i class="material-icons">home</i>Home</a><br>
+			<a href="about.html"><i class="material-icons">info</i>About Me</a><br>
+			<a href="projects.html"><i class="material-icons">code</i>Projects</a><br>
+			<a href="#"><i class="material-icons">contact_page</i>Resume</a>
+		</nav>
+		<main id="mainId">
+			<!--Header image-->
+			<div class="headImage">
+				<!--Make slowly spinning icosphere animation, maybe is pulses and evolves to a planet and stuff-->
+			</div>
+			<!--Featured projects-->
+			<div class="featuredProjectsHolder">
+				<div class="centeredTitle featuredProjectsTitle">Featured Projects</div>
+				<div class="featuredProjects" id="fp" onclick="ToggleModal()"><!--Make animation of planet game where it is spinning and randomizing colors and terrain (and both independently) (just screen record it)-->
+					<div class="projectDisplay">
+						<div class="innerDisplay">
+							
+						</div>
+					</div>
+					<div class="projectDisplay">
+						<div class="innerDisplay">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Contact me-->
+			<div class="contactMe" id="contact">
+				<div class="centeredTitle contactMeTitle">Contact</div>
+				<div class="infoContainer">
+					<div class="centeredTitle contactMeSubText">I would love to hear from you, here is how you can contact me.</div>
+					<div class="centeredTitle contactInfo"><i class="material-icons material-icons-outlined contactIcons">email</i>GMcMichael0717@gmail.com</div>
+					<div class="centeredTitle contactMeSubText">If you want to see more, you can do so here.</div>
+					<div class="centeredTitle contactInfo">
+						<a href="https://github.com/GMcMichael" class="GitHubLink">
+							<img src="assets/GitHub-Mark-32px.png" alt="GitHub Icon" class="GitHubIcon contactIcons">
+							GMcMichael on GitHub</a>
+					</div>
+				</div>
+			</div>
+		</main>
 	</body>
 </html>
