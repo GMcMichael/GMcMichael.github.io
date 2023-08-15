@@ -1,0 +1,293 @@
+:root {
+    --mainColor: #000000;
+    --secColor: #FFFFFF;
+    --accentColor: #7CB6AC;
+    --navTextWidth: 46px;
+    --navTextHeight: 15px;
+    --navRectWidth: 30px;
+    --navRectHeight: 5px;
+    --tabWidth: 80vw;
+    --tabHeight: 80vh;
+    --tabOffset: 0;
+    --postWidth: 50%;
+    --postHeight: 100%;
+    --postNumWidth: 18px;
+    --postNumOffset: 0;
+    --postNums: 0;
+}
+
+body {
+    background-color: var(--mainColor);
+    color: var(--secColor);
+    overflow: hidden;
+}
+
+/*background circles*/
+.backgroundCircle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.backgroundCircle line {
+    position: relative;
+    stroke-linecap: round;
+    stroke-width: var(--circleRadius);
+    filter: blur(50px);
+}
+
+/*Name*/
+.nameDiv {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 20px;
+    z-index: 100;
+}
+.nameText {
+    margin: 0px;
+}
+
+.nameSubtext {
+    margin: 0px;
+    color: var(--accentColor);
+}
+
+/*Nav bar*/
+nav {
+    position: absolute;
+    top: 30vh;
+    left: 0px;
+    margin: 20px 10px;
+    z-index: 100;
+}
+
+.navText {
+    overflow: hidden;
+    height: var(--navTextHeight);
+}
+
+.navText h5 {
+    transition-duration: 500ms;
+    position: relative;
+    height: var(--navTextHeight);
+    transform: translateY(calc(var(--navTextHeight) * var(--tabOffset)));
+    margin: 0px;
+    text-align: center;
+}
+
+nav .rect {
+    transition-duration: 500ms;
+    margin: 10px auto 0 auto;
+    background-color: var(--secColor);
+    width: var(--navRectWidth);
+    height: var(--navRectHeight);
+    border-radius: 10px;
+}
+
+nav .activeRect {
+    transform: translateX(20px);
+    background-color: var(--accentColor);
+    width: var(--navRectWidth);
+    height: var(--navRectHeight);
+    border-radius: 10px 0px 10px 0px;
+}
+
+.scrollText {
+    transition-duration: 500ms;
+    margin-top: 40px;
+    color: var(--accentColor);
+    transform: rotateZ(90deg);
+}
+
+/*Tab and Container for shifting/scrolling*/
+#tabContainer::-webkit-scrollbar {
+    display: none;
+}
+#tabContainer {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#tabContainer > div {
+    width: 100vw;
+    height: 100vh;
+    transition-duration: 500ms;
+    transform: translateY(calc(100vh * var(--tabOffset)));
+
+}
+
+.tab {
+    position: relative;
+    top: 55%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: var(--tabWidth);
+    height: var(--tabHeight);
+    overflow: hidden;
+}
+
+/*Home Tab*/
+.Home {
+    /*background-color: #770077;*/
+}
+
+/*Projects Tab*/
+.Projects::-webkit-scrollbar {
+    display: none;
+}
+
+.Projects {
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px 50px 10px 10px;
+    overflow-x: initial;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.post {
+    position: relative;
+    flex: 0 0 auto;
+    margin: 0 40px 0 40px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--postWidth);
+    height: var(--postHeight);
+    min-width: 300px;
+}
+
+.postImgContainer {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: end;
+}
+
+.postImgContainer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    filter: blur(5px);
+    border-radius: 30px 30px 0 0;
+    background-image: var(--backImg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto 100%;
+    background-position: center;
+}
+
+.postImgContainer img {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    z-index: 10;
+}
+
+.postContentContainer {
+    width: 100%;
+    height: 45%;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.postContentContainer::before {
+    content: "";
+    position: absolute;
+    background-color: #555555;
+    opacity: 0.25;
+    width: 100%;
+    height: 45%;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+}
+
+.postContentContainer::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 45%;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, rgba(20,20,20,0) 70%, rgba(20,20,20,1) 100%);
+    z-index: 11;
+}
+
+.postContentContainer h2 {
+    position: relative;
+    margin: 0px 0px 0px 2%;
+    z-index: 10;
+}
+
+.postContentContainer p {
+    position: relative;
+    margin: 0px 2% 0px 2%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.postContentContainer button {
+    position: absolute;
+    z-index: 12;
+    top: 91%;
+    right: 2%;
+    color: var(--accentColor);
+    opacity: 0.8;
+    transition-duration: 200ms;
+
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.postContentContainer button:hover {
+    transform: scale(1.1);
+}
+
+#postNumContainer {
+    position: absolute;
+    width: var(--postNumWidth);
+    height: 18px;
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 94vh;
+    overflow: hidden;
+}
+
+#postNums {
+    width: calc(var(--postNumWidth) * var(--postNums));
+    margin: 0px;
+}
+
+.postNumItem {
+    position: relative;
+    display: inline-block;
+    transform: translateX(calc(var(--postNumWidth) * var(--postNumOffset)));
+    transition-duration: 200ms;
+    width: var(--postNumWidth);
+    height: 18px;
+    text-align: center;
+}
+
+/*Info Tab*/
+.Info {
+
+}

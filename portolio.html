@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Garrett McMichael</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="portfolioStyles.css">
+    <script src="portfolioJson.js"></script>
+    <script src="portfolio.js"></script>
+</head>
+<body>
+    <svg class="backgroundCircle">
+        <line style="--circleRadius: 300" stroke="#301341" x1="20vw" y1="60vh" x2="40vw" y2="30vh" />
+        <line style="--circleRadius: 300" stroke="#132439" x1="70vw" y1="50vh" x2="90vw" y2="60vh" />
+    </svg>
+    <div class="nameDiv" id="logo">
+        <h2 class="nameText">Garrett McMichael</h2>
+        <h5 class="nameSubtext">Software Developer</h5>
+    </div>
+    <nav>
+        <div class="navText">
+            <h5>Home</h5>
+            <h5>Projects</h5>
+            <h5>Info</h5>
+        </div>
+        <div class="rect activeRect" id="rect0"></div>
+        <div class="rect" id="rect1"></div>
+        <div class="rect" id="rect2"></div>
+        <h5 class="scrollText" id="scrollText"> Scroll -></h5>
+    </nav>
+    <main>
+        <div id="tabContainer">
+            <div>
+                <div class="tab Home">
+                    <h2>Hi <br /> I'm Garrett</h2>
+                </div>
+            </div>
+            <div>
+                <div class="tab Projects" id="postContainer"></div>
+                <div id="postNumContainer">
+                    <div id="postNums">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="tab Info">
+                    Placeholder
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
